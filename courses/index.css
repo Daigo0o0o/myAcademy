@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #121212; 
+    color: #fff;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ff9800;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.course-card {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px;
+}
+
+.course-card img {
+    width: 100%;
+    max-width: 400px;
+    max-height: 250px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.course-card h3 {
+    margin: 15px 0 10px;
+}
+
+.course-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.course-card button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+@font-face {
+    font-family: cinema;
+    src: url(../assets/fonts/cinema.ttf);
+}
+@font-face {
+    font-family: traffic;
+    src: url(../assets/fonts/traffic.ttf);
+}
+* {
+    font-family: traffic;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: cinema !important;
+}

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تیم ما</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* استایل کلی */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: traffic;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+            color: #ffffff;
+
+        }
+        .logo {
+            color: #ff9800;
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* هدر و معرفی تیم */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #f5f5f5;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            border-bottom: 4px solid #ff9800;
+        }
+        
+        .team-name {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #ff9800;
+            text-shadow: 0 2px 5px rgba(255, 152, 0, 0.3);
+        }
+        
+        .team-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            opacity: 0.9;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+        
+        .course-info {
+            background-color: rgba(255, 152, 0, 0.15);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-top: 15px;
+            color: #ffcc80;
+            border: 1px solid rgba(255, 152, 0, 0.3);
+        }
+        
+        /* کارت‌های اعضای تیم */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #ff9800;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: #ff9800;
+            bottom: -12px;
+            right: 50%;
+            transform: translateX(50%);
+            border-radius: 2px;
+            box-shadow: 0 2px 5px rgba(255, 152, 0, 0.4);
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .member-card {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            width: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 152, 0, 0.2);
+        }
+        
+        .member-img {
+            height: 200px;
+            background-color: #2d2d2d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #ff9800;
+            border-bottom: 2px solid #333;
+        }
+        
+        .member-info {
+            padding: 25px;
+        }
+        
+        .member-name {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: #ff9800;
+        }
+        
+        .member-role {
+            color: #ffcc80;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .member-bio {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .member-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #2d2d2d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff9800;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid #444;
+        }
+        
+        .contact-link:hover {
+            background-color: #ff9800;
+            color: #121212;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+        }
+        
+        /* بخش اهداف تیم */
+        .team-goals {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 60px;
+            border: 1px solid #333;
+        }
+        
+        .goals-list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .goal-item {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 10px;
+            border-right: 4px solid #ff9800;
+            display: flex;
+            align-items: flex-start;
+            transition: transform 0.3s ease;
+        }
+        
+        .goal-item:hover {
+            transform: translateY(-5px);
+            background-color: #333;
+        }
+        
+        .goal-icon {
+            color: #ff9800;
+            font-size: 1.5rem;
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+        
+        .goal-item h3 {
+            color: #ffcc80;
+            margin-bottom: 8px;
+        }
+        
+        .goal-item p {
+            color: #b0b0b0;
+        }
+        
+        /* دکمه تماس */
+        .contact-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #121212;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+        }
+        
+        .contact-btn:hover {
+            background-color: #ffb74d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 152, 0, 0.4);
+        }
+        
+        /* دکمه‌های اضافی */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2d2d2d;
+            color: #ff9800;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid #ff9800;
+        }
+        
+        .btn:hover {
+            background-color: #ff9800;
+            color: #121212;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+        
+        .btn-primary {
+            background-color: #ff9800;
+            color: #121212;
+        }
+        
+        /* فوتر */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #888;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            background-color: #1a1a1a;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .footer-info {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        /* اسکرول بار سفارشی */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #ff9800;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffb74d;
+        }
+        
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .team-name {
+                font-size: 2.2rem;
+            }
+            
+            .team-description {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            .member-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .team-goals {
+                padding: 25px;
+            }
+            
+            .goals-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%;
+                text-align: center;
+            }
+        }
+        @font-face {
+            font-family: cinema;
+            src: url(../assets/fonts/cinema.ttf);
+        }
+        @font-face {
+            font-family: traffic;
+            src: url(../assets/fonts/traffic.ttf);
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-family: cinema !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo" style="margin: 0;">
+            <img src="../assets/images/logo.png" alt="" />
+            آکادمی من
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="courses/index.html">دوره‌ها</a></li>
+                <li><a href="myteam.html">تیم ما</a></li>
+                <li><a href="login.html">ورود / ثبت‌نام</a></li>
+                <li><a href="courses/call.html">تماس با ما</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1 class="team-name">تیم نوآوران فناوری</h1>
+            <p class="team-description">
+                ما گروهی از دانشجویان علاقه‌مند به فناوری اطلاعات هستیم که برای انجام پروژه درس "طراحی وب" گرد هم آمده‌ایم. هدف ما خلق تجربیات دیجیتال خلاقانه و کاربرپسند است.
+            </p>
+            <div class="course-info">
+                <i class="fas fa-graduation-cap"></i> پروژه درس طراحی وب | استاد: آقای نوید ایمانی | نیمسال دوم 1404
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="team-section">
+            <h2 class="section-title">اعضای تیم</h2>
+            <div class="team-members">
+                <!-- عضو اول -->
+                <div class="member-card">
+                    <div class="member-img">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">مریم احمدی</h3>
+                        <p class="member-role">توسعه دهنده فرانت‌اند</p>
+                        <p class="member-bio">دانشجوی ترم ۴ مهندسی کامپیوتر، علاقه‌مند به طراحی رابط کاربری و تجربه کاربری. مسئول پیاده‌سازی بخش ظاهری پروژه.</p>
+                        <div class="member-contact">
+                            <a href="mailto:m.ahmadi@example.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="contact-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- عضو دوم -->
+                <div class="member-card">
+                    <div class="member-img">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">علیرضا سلیمی</h3>
+                        <p class="member-role">توسعه دهنده بک‌اند</p>
+                        <p class="member-bio">دانشجوی ترم 8 مهندسی نرم‌افزار، تخصص در توسعه سمت سرور و پایگاه داده. مسئول منطق پروژه و مدیریت داده‌ها.</p>
+                        <div class="member-contact">
+                            <a href="mailto:a.salimi@example.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="contact-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- عضو سوم -->
+                <div class="member-card">
+                    <div class="member-img">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">سارا محمدی</h3>
+                        <p class="member-role">طراح رابط کاربری</p>
+                        <p class="member-bio">دانشجوی ترم ۳ مهندسی کامپیوتر، متخصص در طراحی گرافیک و تجربه کاربری. مسئول طراحی و وایرفریم پروژه.</p>
+                        <div class="member-contact">
+                            <a href="mailto:s.mohammadi@example.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="contact-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- عضو چهارم -->
+                <div class="member-card">
+                    <div class="member-img">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">رضا کریمی</h3>
+                        <p class="member-role">مدیر پروژه</p>
+                        <p class="member-bio">دانشجوی ترم ۶ مهندسی صنایع، متخصص در مدیریت پروژه و هماهنگی تیم. مسئول برنامه‌ریزی و پیگیری پیشرفت کارها.</p>
+                        <div class="member-contact">
+                            <a href="mailto:r.karimi@example.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="contact-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-goals">
+            <h2 class="section-title">اهداف و مسئولیت‌های تیم</h2>
+            <ul class="goals-list">
+                <li class="goal-item">
+                    <i class="fas fa-check-circle goal-icon"></i>
+                    <div>
+                        <h3>طراحی رابط کاربری زیبا و کاربرپسند</h3>
+                        <p>ایجاد یک طراحی مدرن و واکنش‌گرا که برای همه دستگاه‌ها بهینه باشد.</p>
+                    </div>
+                </li>
+                <li class="goal-item">
+                    <i class="fas fa-check-circle goal-icon"></i>
+                    <div>
+                        <h3>پیاده‌سازی عملکردهای اصلی پروژه</h3>
+                        <p>توسعه تمام ویژگی‌های مورد نیاز پروژه طبق مستندات ارائه شده.</p>
+                    </div>
+                </li>
+                <li class="goal-item">
+                    <i class="fas fa-check-circle goal-icon"></i>
+                    <div>
+                        <h3>تست و اشکال‌زدایی</h3>
+                        <p>بررسی کامل کدها و رفع خطاهای احتمالی قبل از تحویل پروژه.</p>
+                    </div>
+                </li>
+                <li class="goal-item">
+                    <i class="fas fa-check-circle goal-icon"></i>
+                    <div>
+                        <h3>مستندسازی پروژه</h3>
+                        <p>تهیه مستندات فنی و کاربردی برای راهنمایی استفاده از پروژه.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p class="footer-info">این صفحه برای تکلیف درس طراحی وب ساخته شده است.</p>
+        </div>
+    </footer>
+</body>
+</html>

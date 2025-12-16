@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ff9800;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.detail {
+    padding: 50px 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.container img {
+    width: 100%;
+    max-height: 600px;
+    border-radius: 10px;
+}
+
+.info h1 {
+    margin-bottom: 10px;
+}
+
+.info p {
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.info ul {
+    list-style: disc;
+    padding-right: 20px;
+    color: #aaa;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #121212;
+}
+
+
+
+
+
+@font-face {
+    font-family: cinema;
+    src: url(../assets/fonts/cinema.ttf);
+}
+@font-face {
+    font-family: traffic;
+    src: url(../assets/fonts/traffic.ttf);
+}
+* {
+    font-family: traffic;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: cinema !important;
+}
