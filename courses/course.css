@@ -28,7 +28,26 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 20px;
+}
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+.cartLi {
+    position: relative;
+    cursor: pointer;
+}
+.cartLi span {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
 }
 
 nav a {
