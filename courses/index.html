@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <title>دوره‌ها | آکادمی من</title>
     <link rel="stylesheet" href="index.css">
+    <!-- hamber menu files -->
+    <script type="module" src="../hamber.js"></script>
+    <link rel="stylesheet" href="../hamber.css">
 </head>
 <body>
     <header>
+        <div class="hamberger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <h1 class="logo" style="margin: 0;">
             <img src="../assets/images/logo.png" alt="" />
             آکادمی من
         </h1>
-        <nav>
+        <nav class="closedNav">
+            <div class="close-hamber">x</div>
             <ul>
                 <li id="cartLi" class="cartLi">
                     <img src="../assets/cart.svg" alt=""/>
