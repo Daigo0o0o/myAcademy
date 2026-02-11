@@ -43,3 +43,14 @@ if (cartCount) {
 } else {
     document.getElementById("cartCount").style.opacity = 0;
 }
+
+
+const stars = document.getElementById("stars");
+
+if(stars) {
+  for (let i = 0; i < 5; i++) {
+    stars.children[i].addEventListener("click", () => {
+      window.alert(`Stars given: ${i+1}`)
+    })
+  }
+}

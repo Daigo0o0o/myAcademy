@@ -89,6 +89,47 @@ nav a {
     margin: 20px 0;
 }
 
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#stars {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 30px;
+    gap: 5px;
+}
+#stars > div:hover {
+    cursor: pointer;
+}
+
+#stars > div:hover {
+    color: red;
+}
+
+#stars:has(div:nth-child(2):hover) div:nth-child(1) {
+    color: red;
+}
+
+#stars:has(div:nth-child(3):hover) div:nth-child(1),
+#stars:has(div:nth-child(3):hover) div:nth-child(2) {
+    color: red;
+}
+
+#stars:has(div:nth-child(4):hover) div:nth-child(1),
+#stars:has(div:nth-child(4):hover) div:nth-child(2),
+#stars:has(div:nth-child(4):hover) div:nth-child(3) {
+    color: red;
+}
+
+#stars:has(div:nth-child(5):hover) div:nth-child(1),
+#stars:has(div:nth-child(5):hover) div:nth-child(2),
+#stars:has(div:nth-child(5):hover) div:nth-child(3),
+#stars:has(div:nth-child(5):hover) div:nth-child(4) {
+    color: red;
+}
+
 button {
     padding: 10px 20px;
     background-color: #ff9800;

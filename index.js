@@ -15,5 +15,5 @@ document.getElementById("cartLi")?.addEventListener("click", ()=> {
       localStorage.removeItem("cartCount");
       location.reload();
     };
-  }
-})
+  };
+});
